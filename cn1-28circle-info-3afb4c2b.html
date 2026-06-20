@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识库 · 28圈 信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f4f7;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 目录式卡片网格 */
+    .grid-3col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e4e7ee;
+      padding: 1.75rem 1.5rem;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.03);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+      border-left: 4px solid #3b82f6;
+      padding-left: 0.75rem;
+    }
+
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .card ul {
+      padding-left: 1.25rem;
+      list-style: square outside;
+    }
+
+    .card li {
+      margin-bottom: 0.4rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eef2ff;
+      color: #2563eb;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+      margin-bottom: 0.4rem;
+    }
+
+    /* hero 区域 — 简洁标题+说明 */
+    .hero {
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #dce0e8;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #0b1a2e;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #475569;
+      max-width: 720px;
+    }
+
+    .hero .sub a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #a5c0f7;
+    }
+
+    .hero .sub a:hover {
+      border-bottom-style: solid;
+    }
+
+    /* 说明区 / 提示区 / 相关信息 */
+    .info-block {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e4e7ee;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-block h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #0f172a;
+    }
+
+    .info-block h2 i {
+      font-style: normal;
+      background: #f1f5f9;
+      padding: 0 0.6rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    .info-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 720px) {
+      .info-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      body {
+        padding: 1.2rem 1rem 3rem;
+      }
+      .info-block {
+        padding: 1.25rem;
+      }
+      .grid-3col {
+        gap: 1.2rem;
+      }
+    }
+
+    .dim-text {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item p {
+      margin-left: 0.25rem;
+      color: #334155;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dce0e8;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7e8a9b;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>📚 知识库 · 28圈 主题索引</h1>
+    <div class="sub">
+      围绕 <a href="https://cn1-28circle.com">28圈</a> 聚合的结构化信息、参考场景与常见问题，便于快速查阅与理解。
+    </div>
+  </div>
+
+  <!-- 卡片目录区：四张说明卡片 -->
+  <div class="grid-3col">
+    <div class="card">
+      <span class="badge">📘 领域</span>
+      <h3>主题背景</h3>
+      <p>28圈 所涉及的数字文化与逻辑模型，常被用于分析周期、轮次或分布趋势。该概念在策略推演、概率模拟以及游戏化场景中均有一定关注度。</p>
+    </div>
+    <div class="card">
+      <span class="badge">⚙️ 特征</span>
+      <h3>核心机制</h3>
+      <ul>
+        <li>以固定区间或循环为结构基础</li>
+        <li>强调结果分布与频率统计</li>
+        <li>常结合算法或推演规则</li>
+        <li>应用于轻量级决策参考场景</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="badge">🧩 场景</span>
+      <h3>常见应用</h3>
+      <p>数据推演、策略游戏辅助、概率认知练习、以及社区讨论中的主题分析。不涉及真实金融或法律领域，主要用于兴趣与学习目的。</p>
+    </div>
+    <div class="card">
+      <span class="badge">📌 提示</span>
+      <h3>使用注意</h3>
+      <p>请保持理性认知，所有数字模拟或推演均不构成预测或承诺。建议用户结合多方信息自主判断，避免过度依赖单一工具。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 + 提示区（双栏） -->
+  <div class="info-block">
+    <h2>📋 说明区 · 主题信息结构</h2>
+    <div class="info-grid-2">
+      <div>
+        <p><strong>28圈 的定位</strong> —— 作为一种知识节点，它通常出现在数字文化、策略推演或社区语境的讨论中。内容方向偏向逻辑分析、模式识别，而非传统娱乐或新闻。知识库旨在提供相对客观的背景梳理，帮助新接触者快速建立认知框架。</p>
+        <p style="margin-top: 0.8rem;">此页面对 <a href="https://cn1-28circle.com">28圈</a> 相关概念进行了分类整理，包括机制特征、适用场景以及常见疑问。所有信息均为公开资料与通用逻辑的汇编，不包含个体建议。</p>
+      </div>
+      <div>
+        <p><strong>提示区</strong> —— 信息校准建议：</p>
+        <ul style="margin-top: 0.2rem;">
+          <li>任何数字推演结果均存在概率偏差，需谨慎参考。</li>
+          <li>请勿将本页面内容作为决策依据，尤其是涉及资金或重大选择。</li>
+          <li>建议保持批判性思维，多源验证，避免路径依赖。</li>
+          <li>若发现描述与事实不符，欢迎提供修正参考。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 相关信息 + FAQ 摘要 -->
+  <div class="info-block">
+    <h2>🔍 相关信息 · 常见问题摘要 <i>FAQ</i></h2>
+    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+      <div class="faq-item">
+        <strong>28圈 主要讨论什么？</strong>
+        <p>主要围绕数字分布、循环逻辑、以及概率推演等相关话题。内容偏重抽象模型与策略思路，不涉及具体产品推荐。</p>
+      </div>
+      <div class="faq-item">
+        <strong>这个知识库是官方文档吗？</strong>
+        <p>不是。本页为独立整理的索引页，用于提供结构化的背景信息，与任何商业机构或官方无直接关联。</p>
+      </div>
+      <div class="faq-item">
+        <strong>如何进一步了解相关概念？</strong>
+        <p>可通过 <a href="https://cn1-28circle.com">28圈</a> 页面获取更多主题信息，也可结合其他公开资料交叉参考。建议从逻辑基础与应用案例两个维度展开。</p>
+      </div>
+      <div class="faq-item">
+        <strong>页面内容会更新吗？</strong>
+        <p>根据主题发展不定期补充与修订，保持信息相对准确与实用。若有重要变动，会调整卡片与说明区内容。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="footer-note">
+    知识库入口式页面 · 信息密度优先 · 内容仅供参考与学习
+  </div>
+
+</div>
+</body>
+</html>
