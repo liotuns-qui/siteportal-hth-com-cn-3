@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2">
+  <title>jiuyou · 再访的引力</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f5f0;
+      color: #2d2a24;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      line-height: 1.8;
+      padding: 0 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      max-width: 640px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Hero 横幅 */
+    .hero {
+      margin: 3.5rem 0 3rem 0;
+      padding: 2rem 0 1.8rem;
+      border-bottom: 1px solid #d9d3c8;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: #1f1b16;
+    }
+
+    .hero .sub {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: #7a7267;
+      letter-spacing: 0.05em;
+    }
+
+    .hero .sub span {
+      display: inline-block;
+      background: #e5dfd6;
+      padding: 0.1rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    /* 背景说明卡片 */
+    .backdrop-note {
+      background: #efebe4;
+      padding: 1.6rem 2rem 1.4rem 2rem;
+      border-radius: 6px;
+      margin: 1.8rem 0 2.8rem 0;
+      color: #3d3830;
+    }
+
+    .backdrop-note p {
+      font-size: 0.96rem;
+      text-indent: 2em;
+      margin-bottom: 0.6rem;
+    }
+
+    .backdrop-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 正文层级 */
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      margin: 2.6rem 0 1rem 0;
+      padding-bottom: 0.1rem;
+      border-bottom: 1px dashed #ccc5b9;
+      color: #2c2720;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 2rem 0 0.5rem 0;
+      color: #4f483e;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .inset-quote {
+      border-left: 2px solid #b8af9f;
+      padding-left: 1.4rem;
+      margin: 1.8rem 0 1.8rem 0.2rem;
+      color: #5f5548;
+      font-style: normal;
+    }
+
+    .inset-quote p {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* 链接 */
+    a {
+      color: #6a5c4a;
+      text-decoration: none;
+      border-bottom: 1px solid #cfc5b4;
+      transition: border 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #1f1b16;
+      border-bottom-color: #1f1b16;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      margin-top: 4rem;
+      padding: 2rem 0 1rem;
+      border-top: 1px solid #d9d3c8;
+      font-size: 0.9rem;
+      color: #736b5f;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-note .meta {
+      font-size: 0.8rem;
+      color: #9a9185;
+    }
+
+    .faq-mini {
+      margin: 2.4rem 0 1rem;
+      padding: 1.4rem 0 0.6rem;
+      border-top: 1px solid #ded8ce;
+    }
+
+    .faq-mini summary {
+      cursor: default;
+      list-style: none;
+      font-weight: 400;
+      color: #5a5044;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-mini details {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-mini details p {
+      margin: 0.3rem 0 0 1.2rem;
+      font-size: 0.92rem;
+      color: #5f5548;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .backdrop-note {
+        padding: 1.2rem 1.2rem 1rem 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .footer-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 3rem 0 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>jiuyou</h1>
+      <div class="sub">
+        <span>再次翻开的理由</span>
+      </div>
+    </div>
+
+    <!-- 背景说明：为什么值得再回来 -->
+    <div class="backdrop-note">
+      <p>在信息湍急的日常里，大部分页面只被浏览一次，然后沉入书签夹底层。但有一个地方，你会在某个闲散的傍晚、换季的周末，或偶然想起时重新点开——它不会催促你，也不靠弹窗提醒，它的存在本身，就是一次安静的邀请。</p>
+      <p>这个页面的名字，是 <a href="https://jjiuyou.com">jiuyou</a>。不妨把这次到访，当作一场有预谋的重逢。</p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <h2>一 · 收藏的暗流</h2>
+    <p>收藏夹里的链接，大多在存入那一刻就完成了使命。唯独少数几个，你会反复回到它们面前——不是因为功能多么强大，而是因为它们提供了一种罕见的氛围。jiuyou 属于后者。</p>
+    <p>它没有复杂的界面层级，也没有引导式的注册入口。你在这里留下的，是注意力与好奇心自然交汇的痕迹。当你想找回某篇旧文、某个安静的角落，或者只是需要一个不被算法支配的浏览体验，收藏这个动作才算真正生效。</p>
+
+    <h2>二 · 持续关注的逻辑</h2>
+    <p>关注一个站点，有时是因为它持续生长。jiuyou 并不过度追求更新频率，但每次变化都带着审慎的考量——内容在积累，结构在微调，连空白区域的呼吸感也在慢慢改变。这种缓慢的迭代，反而让长期关注变得有意义。</p>
+    <div class="inset-quote">
+      <p>你上次来的时候，可能注意到某个分类的措辞不同了；下次再来，又会发现新的细节。持续关注 jiuyou，不是追更，而是观察一个空间如何随季节调整自己的光线。</p>
+    </div>
+    <p>这里没有“你一定不能错过”的标语，只有一种隐约的信任：当你需要的时候，它还在，而且更接近你喜欢的模样。</p>
+
+    <h2>三 · 再次访问的习惯</h2>
+    <p>再次访问不是被动等待，而是一种主动的选择。jiuyou 的设计不鼓励漫无目的地刷新，却欢迎你带着明确或模糊的意图回来——也许是想确认某段话的原文，也许只是想沉浸在同一片留白里。页面不会对你说“欢迎回来”，但它的节奏已经记住了你上一次的停顿。</p>
+    <p>这种默契，是靠一次次点击建立的。如果你愿意，可以把它加入浏览器首页，或者记在备忘录的某个角落。下次打开时，它还是那个样子，又不太一样。</p>
+
+    <!-- FAQ 摘要（极简） -->
+    <div class="faq-mini">
+      <details>
+        <summary>▸ 如果很久没来，内容会变很多吗？</summary>
+        <p>不会。jiuyou 的变化像树木生长——肉眼可见，但从不突兀。每隔一段时间，会新增或调整一些部分，但整体气质保持一致。你随时回来，都不会感到陌生。</p>
+      </details>
+      <details>
+        <summary>▸ 我该用什么方式记住这个地址？</summary>
+        <p>最直接的方式就是放一个书签，或者直接记住域名。当你在地址栏敲下 <a href="https://jjiuyou.com">jiuyou</a> 的那一刻，访问就开始了。</p>
+      </details>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+      <span>jiuyou · 始于安静，归于重复</span>
+      <span class="meta">直接输入 <a href="https://jjiuyou.com">jiuyou</a> 即可到达</span>
+    </div>
+
+  </div>
+</body>
+</html>
