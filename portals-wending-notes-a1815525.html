@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问鼎娱乐 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f7f5f0;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+        /* 深色头图 hero */
+        .hero {
+            background: linear-gradient(145deg, #1b1b1f 0%, #2a2a30 100%);
+            color: #e8e5de;
+            padding: 6rem 1.5rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: #f7f5f0;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+            color: #f0ede5;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #c8c4bb;
+            font-weight: 300;
+        }
+        .hero .tagline {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.4rem 1.6rem;
+            border: 1px solid #5f5b55;
+            border-radius: 40px;
+            color: #d6d1c6;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        /* 浅色正文区 container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.8rem;
+        }
+        .section {
+            padding: 3.5rem 0 2.8rem;
+        }
+        .section-intro {
+            padding-top: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.6rem;
+            color: #2c2a27;
+            border-left: 5px solid #b28b5c;
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #3c3935;
+        }
+        p {
+            margin-bottom: 1.2rem;
+            color: #3c3935;
+        }
+        .grid-2, .grid-3 {
+            display: grid;
+            gap: 1.8rem;
+            margin: 2rem 0 1.2rem;
+        }
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+        .grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .card {
+            background: #ffffffec;
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #eae6de;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+        .card .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .card h3 {
+            margin-top: 0.2rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #4d4a45;
+        }
+        /* FAQ 摘要 */
+        .faq-list {
+            margin: 1.5rem 0;
+        }
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd8cf;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #2c2a27;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #5b5751;
+            font-size: 0.95rem;
+        }
+        .btn-ghost {
+            display: inline-block;
+            margin-top: 0.2rem;
+            padding: 0.5rem 1.8rem;
+            border: 1px solid #b28b5c;
+            border-radius: 40px;
+            color: #b28b5c;
+            text-decoration: none;
+            font-weight: 450;
+            background: transparent;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-ghost:hover {
+            background: #b28b5c;
+            color: #fff;
+        }
+        a {
+            color: #9f7b4b;
+            text-decoration: none;
+            font-weight: 450;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #7a5d38;
+            text-decoration: underline;
+        }
+        .inline-link {
+            color: #9f7b4b;
+            font-weight: 450;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            padding: 2.5rem 0 3rem;
+            border-top: 1px solid #ddd8cf;
+            text-align: center;
+            color: #6b6760;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #7a5d38;
+        }
+        @media (max-width: 780px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .section {
+                padding: 2.5rem 0 1.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 1rem 3.5rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 0 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- hero 区 -->
+    <section class="hero">
+        <h1>问鼎娱乐</h1>
+        <p>一个面向数字生活的内容站点，专注提供审慎、可靠的信息参考与功能引导。我们更倾向于用平实的视角，陪伴每一次探索。</p>
+        <span class="tagline">站点介绍 · 可信说明</span>
+    </section>
+
+    <div class="container">
+        <!-- 优势区 / 特点 -->
+        <section class="section section-intro">
+            <h2>为什么关注这里</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="emoji">🧭</div>
+                    <h3>信息简明</h3>
+                    <p>不堆叠冗余术语，每项介绍都经过梳理，帮助您快速了解平台所提供的内容方向。</p>
+                </div>
+                <div class="card">
+                    <div class="emoji">📋</div>
+                    <h3>结构清晰</h3>
+                    <p>功能模块与说明分区明确，您可以依据自身需求，自由浏览感兴趣的部分。</p>
+                </div>
+                <div class="card">
+                    <div class="emoji">🔗</div>
+                    <h3>直达路径</h3>
+                    <p>站点内提供直接关联链接，通过 <a href="https://portals-wending.com" class="inline-link">问鼎娱乐</a> 即可进入主要页面，省去多余跳转。</p>
+                </div>
+            </div>
+            <p style="margin-top: 0.5rem;">同时，我们保持克制的信息呈现，不夸大、不误导，让您基于真实了解做出自己的判断。</p>
+        </section>
+
+        <!-- 说明区 / 介绍与场景 -->
+        <section class="section">
+            <h2>站点说明与适用场景</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🔍 内容定位</h3>
+                    <p>本网站围绕娱乐、资讯与轻工具类方向展开，所有公开内容均基于可查证的信息整理。我们不收集用户隐私数据，也无隐藏推广链路。</p>
+                    <p>若您对具体板块有疑问，可通过站内 FAQ 或页面底部渠道进一步了解。</p>
+                </div>
+                <div class="card">
+                    <h3>📌 常见使用场景</h3>
+                    <p>· 想要了解平台功能框架的新访客<br>
+                       · 需要快速定位核心链接的老用户<br>
+                       · 对娱乐信息保持兴趣，同时希望获得可信路径的浏览者</p>
+                    <p>您随时可以从 <a href="https://portals-wending.com" class="inline-link">问鼎娱乐</a> 开始，根据自身节奏阅读或跳转。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ 摘要区 -->
+        <section class="section">
+            <h2>常见疑问摘要</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">“问鼎娱乐”是什么类型的站点？</div>
+                    <div class="faq-a">它是一个以内容介绍与导航为主的网站，汇集了精选的娱乐信息、功能指引与相关说明，不涉及直接交易或敏感操作。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">网站内容更新频率如何？</div>
+                    <div class="faq-a">根据信息实用性与用户反馈进行不定期更新，保持内容时效性，但不会为了更新而频繁变动核心结构。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">如何确保链接指向的可靠性？</div>
+                    <div class="faq-a">所有出现在站内的链接均经过人工确认，直接关联到 <a href="https://portals-wending.com">问鼎娱乐</a> 或其明确子页面，无重定向或外链陷阱。</div>
+                </div>
+            </div>
+            <p style="margin-top: 0.8rem; font-size: 0.95rem;">若仍有疑问，欢迎通过站点相关渠道反馈，我们会在能力范围内及时回应。</p>
+        </section>
+
+        <!-- 底部链接区 -->
+        <footer class="footer">
+            <p>本站内容由维护团队基于公开信息整理，仅供个人参考，不构成任何形式的承诺或引导。</p>
+            <p style="margin-top: 1rem;">
+                <a href="https://portals-wending.com">问鼎娱乐</a> · 以平实视角，呈现可信信息
+            </p>
+            <p style="margin-top: 0.8rem; opacity: 0.7;">&copy; 2025 问鼎娱乐 · 站点介绍页</p>
+        </footer>
+    </div>
+</body>
+</html>
